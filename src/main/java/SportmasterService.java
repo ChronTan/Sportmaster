@@ -55,6 +55,9 @@ public class SportmasterService {
             case "Gold":
                 bonus=(float)Math.floor(costPurchases/1000)*100;
                 break;
+                default:
+                    System.out.println("Такой категории нет");
+                    break;
         }
 
         return bonus;
