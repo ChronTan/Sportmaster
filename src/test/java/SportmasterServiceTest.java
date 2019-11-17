@@ -13,4 +13,14 @@ class SportmasterServiceTest {
 
     }
 
+    @Test
+    void accounting() {
+        SportmasterService smService = new SportmasterService(10_000,1_500);
+        smService.levelCard(smService.getCostOfAllPurchases());
+        float result=smService.accounting(smService);
+        assertEquals(50,result);
+    }
+
+
+
 }
