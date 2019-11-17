@@ -1,1 +1,2 @@
 [![Build Status](https://travis-ci.org/ChronTan/Sportmaster.svg?branch=master)](https://travis-ci.org/ChronTan/Sportmaster)
+[![codecov](https://codecov.io/gh/ChronTan/Sportmaster/branch/master/graph/badge.svg)](https://codecov.io/gh/ChronTan/Sportmaster)
