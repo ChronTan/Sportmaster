@@ -19,7 +19,9 @@ public class SportmasterService {
         return levelCard;
     }
 
-
+    public void setLevelCard(String levelCard) {
+        this.levelCard = levelCard;
+    }
 
     public void levelCard(float cost){
         if(cost<=15000){

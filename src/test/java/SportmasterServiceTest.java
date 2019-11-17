@@ -29,6 +29,9 @@ class SportmasterServiceTest {
         smService.levelCard(100_000);
         result=smService.accounting(smService);
         assertEquals(70,result);
+        smService.setLevelCard("No");
+        result=smService.accounting(smService);
+        assertEquals(0,result);
     }
 
 
