@@ -13,25 +13,13 @@ public class SportmasterService {
         return costOfAllPurchases;
     }
 
-    public void setCostOfAllPurchases(float costOfAllPurchases) {
-        this.costOfAllPurchases = costOfAllPurchases;
-    }
 
-    public float getCostPurchases() {
-        return costPurchases;
-    }
-
-    public void setCostPurchases(float costPurchases) {
-        this.costPurchases = costPurchases;
-    }
 
     public String getLevelCard() {
         return levelCard;
     }
 
-    public void setLevelCard(String levelCard) {
-        this.levelCard = levelCard;
-    }
+
 
     public void levelCard(float cost){
         if(cost<=15000){
