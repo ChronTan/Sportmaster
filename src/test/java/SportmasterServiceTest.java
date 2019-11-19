@@ -6,34 +6,19 @@ class SportmasterServiceTest {
 
     @Test
     void testingNameLevel() {
-        SportmasterService smService = new SportmasterService(10_000_000,1_000);
-        float cost=smService.getCostOfAllPurchases();
-        smService.levelCard(cost);
-        assertEquals("Gold",smService.getLevelCard());
-        smService.levelCard(10_000);
-        assertEquals("Standart",smService.getLevelCard());
-        smService.levelCard(100_000);
-        assertEquals("Silver",smService.getLevelCard());
+        Sportmaster sportmaster = new Sportmaster(10_000_000, 1_999);
+        SportmasterService sportmasterService = new SportmasterService(sportmaster);
+        sportmasterService.levelCard(sportmaster.getCostOfAllPurchases());
+        assertEquals("Gold", sportmaster.getLevelCard());
 
     }
 
     @Test
     void accounting() {
-        SportmasterService smService = new SportmasterService(10_000,1_500);
-        smService.levelCard(smService.getCostOfAllPurchases());
-        float result=smService.accounting(smService);
-        assertEquals(50,result);
-        smService.levelCard(10_000_000);
-        result=smService.accounting(smService);
-        assertEquals(100,result);
-        smService.levelCard(100_000);
-        result=smService.accounting(smService);
-        assertEquals(70,result);
-        smService.setLevelCard("No");
-        result=smService.accounting(smService);
-        assertEquals(0,result);
+        Sportmaster sportmaster = new Sportmaster(10_000,1_999);
+        SportmasterService sportmasterService = new SportmasterService(sportmaster);
+        sportmasterService.levelCard(sportmaster.getCostOfAllPurchases());
+        int bonus=sportmasterService.accounting(sportmaster);
+        assertEquals(50,bonus);
     }
-
-
-
 }

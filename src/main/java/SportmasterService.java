@@ -1,53 +1,37 @@
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 public class SportmasterService {
 
-    private float costOfAllPurchases;
-    private float costPurchases;
-    private String levelCard;
-
-    public SportmasterService(float costOfAllPurchases, float costPurchases) {
-        this.costOfAllPurchases = costOfAllPurchases;
-        this.costPurchases = costPurchases;
-    }
-
-    public float getCostOfAllPurchases() {
-        return costOfAllPurchases;
-    }
+    private final Sportmaster sportmaster;
 
 
 
-    public String getLevelCard() {
-        return levelCard;
-    }
-
-    public void setLevelCard(String levelCard) {
-        this.levelCard = levelCard;
-    }
-
-    public void levelCard(float cost){
+    public void levelCard(int cost){
         if(cost<=15000){
-            levelCard="Standart";
+            sportmaster.setLevelCard("Standart");
         }else if(cost<=150000){
-            levelCard="Silver";
+            sportmaster.setLevelCard("Silver");
         }else{
-            levelCard="Gold";
+            sportmaster.setLevelCard("Gold");
         }
     }
 
-    public float accounting(SportmasterService sms){
-        float bonus=0;
-        switch (sms.levelCard){
+    public int accounting(Sportmaster sms){
+        int bonus=0;
+        switch (sms.getLevelCard()){
             case "Standart":
-                bonus=(float)Math.floor(costPurchases/1000)*50;
+                bonus=(int)Math.floor(sms.getCostPurchases()/1000)*50;
                 break;
             case "Silver":
-                bonus=(float)Math.floor(costPurchases/1000)*70;
+                bonus=(int)Math.floor(sms.getCostPurchases()/1000)*70;
                 break;
             case "Gold":
-                bonus=(float)Math.floor(costPurchases/1000)*100;
+                bonus=(int)Math.floor(sms.getCostPurchases()/1000)*100;
                 break;
-                default:
-                    System.out.println("Такой категории нет");
-                    break;
+            default:
+                System.out.println("Такой категории нет");
+                break;
         }
 
         return bonus;
