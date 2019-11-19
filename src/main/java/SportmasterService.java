@@ -30,7 +30,7 @@ public class SportmasterService {
                 bonus=sportmaster.getCostPurchases()/1000*100;
                 break;
             default:
-                System.out.println("Такой категории нет");
+                bonus=-1;
                 break;
         }
 
