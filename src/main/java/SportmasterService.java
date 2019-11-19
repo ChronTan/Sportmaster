@@ -17,17 +17,17 @@ public class SportmasterService {
         }
     }
 
-    public int accounting(Sportmaster sms){
+    public int accounting(Sportmaster sportmaster){
         int bonus=0;
-        switch (sms.getLevelCard()){
+        switch (sportmaster.getLevelCard()){
             case "Standart":
-                bonus=(int)Math.floor(sms.getCostPurchases()/1000)*50;
+                bonus=sportmaster.getCostPurchases()/1000*50;
                 break;
             case "Silver":
-                bonus=(int)Math.floor(sms.getCostPurchases()/1000)*70;
+                bonus=sportmaster.getCostPurchases()/1000*70;
                 break;
             case "Gold":
-                bonus=(int)Math.floor(sms.getCostPurchases()/1000)*100;
+                bonus=sportmaster.getCostPurchases()/1000*100;
                 break;
             default:
                 System.out.println("Такой категории нет");
